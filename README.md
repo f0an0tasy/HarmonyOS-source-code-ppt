@@ -1,39 +1,55 @@
-# ListItemEdit
+# 列表编辑效果
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+### 介绍
 
-#### 软件架构
-软件架构说明
+本示例基于List组件，实现待办事项管理、文件管理、备忘录的等场景列表编辑效果。
 
+### 效果预览
 
-#### 安装教程
+![](./screenshots/device/listitem_edit.gif)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##### 使用说明
 
-#### 使用说明
+- 点击添加按钮，选择需要添加的待办事项。
+- 点击左侧checkbox按钮，待办事项状态变更为已完成。
+- 左滑单个待办事项，点击删除按钮后，当前待办事项被删除。
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+### 工程目录
 
-#### 参与贡献
+```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+├──entry/src/main/ets/
+│  ├──common
+│  │  └──Constants.ets               // 公共常量类
+│  ├──entryability
+│  │  └──EntryAbility.ets            // 程序入口类
+│  ├──model
+│  │  └──ToDo.ets                    // 待办事项数据
+│  ├──pages
+│  │  └──Index.ets                   // 首页
+│  └──view
+│     └──TodoListItem.ets            // 待办选项
+└──entry/src/main/resources          // 应用静态资源目录
+```
 
+### 具体实现
 
-#### 特技
+1. List组件绑定@State修饰的数组变量toDoData。
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+2. ListItem组件设置左滑动效swipeAction属性，使得单个ListItem可以进行左右滑动，并显示自定义的UIBuilder。
+
+3. 新增/删除列表项，更新数组变量toDoData，并同时更新List组件UI。
+
+### 相关权限
+
+不涉及
+
+### 约束与限制
+
+1. 本示例仅支持标准系统上运行，支持设备：华为手机。
+
+2. HarmonyOS系统：HarmonyOS NEXT Developer Beta1及以上。
+
+3. DevEco Studio版本：DevEco Studio NEXT Developer Beta1及以上。
+
+4. HarmonyOS SDK版本：HarmonyOS NEXT Developer Beta1 SDK及以上。
