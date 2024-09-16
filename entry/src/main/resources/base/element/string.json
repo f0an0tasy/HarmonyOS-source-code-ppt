@@ -10,31 +10,31 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "列表项编辑"
+      "value": "ListItemEdit"
     },
     {
       "name": "edit",
-      "value": "编辑"
+      "value": "Edit"
     },
     {
       "name": "deleted",
-      "value": "删除成功"
+      "value": "Deleted"
     },
     {
       "name": "incomplete",
-      "value": "功能待完善"
+      "value": "Incomplete"
     },
     {
       "name": "todo",
-      "value": "待办"
+      "value": "TODO"
     },
     {
       "name": "undo",
-      "value": "未完成"
+      "value": "Undone"
     },
     {
       "name": "done",
-      "value": "已完成"
+      "value": "Done"
     }
   ]
 }

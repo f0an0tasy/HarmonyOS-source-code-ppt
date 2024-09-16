@@ -36,11 +36,6 @@ export const STYLE_CONFIG: Record<string, number> = {
 
 export class Constant {
   /**
-   * Available things.
-   */
-  static readonly AVAILABLE_THINGS: string[] = ['读书', '运动', '旅游', '听音乐', '看电影', '唱歌'];
-
-  /**
    * Percent 12.
    */
   static readonly PERCENT_12: string = '12%';

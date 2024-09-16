@@ -1,0 +1,27 @@
+{
+  "strarray": [
+    {
+      "name": "available_things",
+      "value": [
+        {
+          "value": "Reading"
+        },
+        {
+          "value": "Sports"
+        },
+        {
+          "value": "Travel"
+        },
+        {
+          "value": "Listen Music"
+        },
+        {
+          "value": "Watch Movie"
+        },
+        {
+          "value": "Singing"
+        }
+      ]
+    }
+  ]
+}
