@@ -18,7 +18,7 @@
     },
     {
       "name": "deleted",
-      "value": "Deleted"
+      "value": "Successfully deleted"
     },
     {
       "name": "incomplete",
@@ -26,15 +26,15 @@
     },
     {
       "name": "todo",
-      "value": "TODO"
+      "value": "To-Do List"
     },
     {
       "name": "undo",
-      "value": "Undone"
+      "value": "Ongoing"
     },
     {
       "name": "done",
-      "value": "Done"
+      "value": "Completed"
     }
   ]
 }
