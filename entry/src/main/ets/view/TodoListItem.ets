@@ -18,6 +18,7 @@ import { ToDo } from '../model/ToDo';
 
 @Component
 export struct ToDoListItem {
+  UIContext = this.getUIContext()
   @Link achieveData: ToDo[];
   @Link toDoData: ToDo[];
   @ObjectLink toDoItem: ToDo;
@@ -28,7 +29,7 @@ export struct ToDoListItem {
    */
   addAchieveData() {
     this.toDoItem.isCompleted = !this.toDoItem.isCompleted;
-    animateTo({ duration: STYLE_CONFIG.ANIMATION_DURATION }, () => {
+    this.UIContext.animateTo({ duration: STYLE_CONFIG.ANIMATION_DURATION }, () => {
       if (this.toDoItem.isCompleted) {
         let tempData = this.toDoData.filter(item => item.key !== this.toDoItem.key);
         this.toDoData = tempData;
