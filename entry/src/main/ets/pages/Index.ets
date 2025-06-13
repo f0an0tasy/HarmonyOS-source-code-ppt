@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { promptAction } from '@kit.ArkUI';
 import { ToDo } from '../model/ToDo';
 import { ToDoListItem } from '../view/TodoListItem';
 import { STYLE_CONFIG, Constant } from '../common/Constants';
@@ -40,7 +39,7 @@ struct ToDoList {
     } else {
       this.toDoData = this.toDoData.filter(todoItem => item.key !== todoItem.key);
     }
-    promptAction.showToast({ message: $r('app.string.deleted') });
+    this.getUIContext().getPromptAction().showToast({ message: $r('app.string.deleted') });
   }
 
   // Item Swipe left to display the toolbar.
@@ -49,11 +48,11 @@ struct ToDoList {
     Row({ space: STYLE_CONFIG.ICON_GUTTER }) {
       Image($r('app.media.ic_public_settings_filled')).ImageStyle()
         .onClick(() => {
-          promptAction.showToast({ message: $r('app.string.incomplete') });
+          this.getUIContext().getPromptAction().showToast({ message: $r('app.string.incomplete') });
         })
       Image($r('app.media.ic_public_detail_filled')).ImageStyle()
         .onClick(() => {
-          promptAction.showToast({ message: $r('app.string.incomplete') });
+          this.getUIContext().getPromptAction().showToast({ message: $r('app.string.incomplete') });
         })
       Image($r('app.media.ic_public_delete_filled')).ImageStyle()
         .onClick(() => {
@@ -75,11 +74,10 @@ struct ToDoList {
           .aspectRatio(1)
           .onClick(() => {
             // Adds data to the to-do list array based on the selection result of the text selection.
-            TextPickerDialog.show({
-              range: getContext(this).resourceManager.getStringArrayValueSync($r('app.strarray.available_things')),
+            this.getUIContext().showTextPickerDialog({
+              range: this.getUIContext().getHostContext()?.resourceManager.getStringArrayValueSync($r('app.strarray.available_things')),
               onAccept: (value: TextPickerResult) => {
-                this.toDoData.unshift(new ToDo(getContext(this)
-                  .resourceManager
+                this.toDoData.unshift(new ToDo(this.getUIContext().getHostContext()?.resourceManager
                   .getStringArrayValueSync($r('app.strarray.available_things'))[Number(value.index)]));
               },
             });
