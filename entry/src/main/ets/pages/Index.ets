@@ -75,10 +75,10 @@ struct ToDoList {
           .onClick(() => {
             // Adds data to the to-do list array based on the selection result of the text selection.
             this.getUIContext().showTextPickerDialog({
-              range: this.getUIContext().getHostContext()?.resourceManager.getStringArrayValueSync($r('app.strarray.available_things')),
+              range: this.getUIContext().getHostContext()?.resourceManager.getStringArrayValueSync($r('app.strarray.available_things').id),
               onAccept: (value: TextPickerResult) => {
                 this.toDoData.unshift(new ToDo(this.getUIContext().getHostContext()?.resourceManager
-                  .getStringArrayValueSync($r('app.strarray.available_things'))[Number(value.index)]));
+                  .getStringArrayValueSync($r('app.strarray.available_things').id)[Number(value.index)]));
               },
             });
           })
