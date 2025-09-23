@@ -16,6 +16,8 @@
 import { ToDo } from '../model/ToDo';
 import { ToDoListItem } from '../view/TodoListItem';
 import { STYLE_CONFIG, Constant } from '../common/Constants';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 @Extend(Image)
 function ImageStyle() {
@@ -39,7 +41,12 @@ struct ToDoList {
     } else {
       this.toDoData = this.toDoData.filter(todoItem => item.key !== todoItem.key);
     }
-    this.getUIContext().getPromptAction().showToast({ message: $r('app.string.deleted') });
+    try {
+      this.getUIContext().getPromptAction().showToast({ message: $r('app.string.deleted') });
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'Index', `showToast failed. error code=${error.code}, message=${error.message}`);
+    }
   }
 
   // Item Swipe left to display the toolbar.
