@@ -6,7 +6,9 @@ This sample uses the List component to implement the list editing effects in sce
 
 ### Preview
 
-![](./screenshots/device/listitem_edit.en.gif)
+|                               List                               |
+|:--------------------------------------------------------------:|
+| <img src="./screenshots/device/listitem_edit.en.gif" width="320"/> |
 
 ##### How to Use
 
