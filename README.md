@@ -5,8 +5,9 @@
 本示例基于List组件，实现待办事项管理、文件管理、备忘录的等场景列表编辑效果。
 
 ### 效果预览
-
-![](./screenshots/device/listitem_edit.gif)
+|                               List                               |
+|:--------------------------------------------------------------:|
+| <img src="./screenshots/device/listitem_edit.gif" width="320"/> |
 
 ##### 使用说明
 
